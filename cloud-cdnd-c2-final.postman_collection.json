@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "7977b6fe-5456-4b8d-b8d9-d3678ec69668",
+		"name": "cloud-cdnd-c2-final",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8082/filteredimage?image_url=https://timedotcom.files.wordpress.com/2019/03/kitten-report.jpg",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}/filteredimage?image_url=https://timedotcom.files.wordpress.com/2019/03/kitten-report.jpg",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"filteredimage"
+					],
+					"query": [
+						{
+							"key": "image_url",
+							"value": "https://timedotcom.files.wordpress.com/2019/03/kitten-report.jpg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ebs-enpoint request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{eb-url}}/filteredimage?image_url=https://images.freeimages.com/images/large-previews/e04/yellow-frontal-with-ivy-1228121.jpg",
+					"host": [
+						"{{eb-url}}"
+					],
+					"path": [
+						"filteredimage"
+					],
+					"query": [
+						{
+							"key": "image_url",
+							"value": "https://images.freeimages.com/images/large-previews/e04/yellow-frontal-with-ivy-1228121.jpg"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "HOST",
+			"value": "localhost:8082",
+			"type": "string"
+		},
+		{
+			"key": "eb-url",
+			"value": "http://image-filter-dev-dev.us-west-2.elasticbeanstalk.com",
+			"type": "default"
+		}
+	]
+}
